@@ -1,26 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <title>Welcome to BookStore</title>
-</head>
-<body>
-
+ {% extends "nav.html" %}
+ {% block start %}
 <div class="container mt-5">
-    <div class="jumbotron text-white bg-primary">
+    <div class="jumbotron text-white bg-secondary">
         <h1 class="display-4">Welcome to BookStore</h1>
         <p class="lead">Discover a world of knowledge and imagination with our vast collection of books.</p>
         <p>Explore various genres and authors, and embark on an enriching literary journey.</p>
         <p class="lead">
-            <a class="btn btn-success btn-lg" href="#" role="button">Browse Books</a>
+            <a class="btn btn-success btn-lg" href="{{'/list/'}}" role="button">Browse Books</a>
         </p>
     </div>
 </div>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</body>
-</html>
+{% endblock %}
