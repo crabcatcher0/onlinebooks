@@ -2,15 +2,19 @@
 
 {% block start %}
 <div class="container mt-4">
+  <h1 style="color: white;">GoolKicker Books.</h1>
+  <div class="alert alert-danger" role="alert">
+    I do not own these books.
+  </div>
   <div class="row">
     {% for book in data %}
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="card shadow">
           <img class="card-img-top" src="{{ book.image.url }}" alt="{{ book.title }}">
           <div class="card-body">
             <h5 class="card-title">{{ book.title }}</h5>
             <p class="card-text">{{ book.description }}</p>
-            <a href="#" class="btn btn-success">Download</a>
+            <a href="{{book.file.url}}" class="btn btn-success">Download</a>
           </div>
         </div>
       </div>
