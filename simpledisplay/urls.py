@@ -23,7 +23,8 @@ from books.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', book, name = "book"),
-    path('list/', list, name="list")
+    path('list/', list, name="list"),
+    path('syllabus/', syllabus, name="syllabus")
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

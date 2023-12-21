@@ -8,3 +8,6 @@ def book(request):
 def list(request):
     data= Book.objects.all()    
     return render(request, 'list.html', {'data':data})
+
+def syllabus(request):
+    return render(request, 'syllabus.html')
