@@ -1,0 +1,18 @@
+{% extends "nav.html" %}
+
+{% block start %}
+  <div class="container mt-5">
+    <div class="card" style="background-color: #343a40; color: white;">
+      <div class="card-body">
+        <h2 class="card-title">Create an Account</h2>
+        
+        <form action="" method="POST" class="mt-4">
+          {% csrf_token %}
+          {{ form }}
+
+          <button type="submit" class="btn btn-primary mt-3">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

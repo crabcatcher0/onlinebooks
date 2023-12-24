@@ -17,14 +17,12 @@ Including another URLconf
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib import admin
-from django.urls import path
-from books.views import *
+from django.urls import path, include
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', book, name = "book"),
-    path('list/', list, name="list"),
-    path('syllabus/', syllabus, name="syllabus")
+    path('', include('books.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
