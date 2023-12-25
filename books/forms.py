@@ -10,5 +10,5 @@ class RegisterUser(UserCreationForm):
         
 
 class LoginUser(AuthenticationForm):
-     email = forms.EmailField()
-     password = forms.CharField(max_length=30, widget=(forms.PasswordInput()))
+     username = forms.CharField(max_length=30, label='Username')
+     password = forms.CharField(max_length=30, widget=(forms.PasswordInput()), label='Password')

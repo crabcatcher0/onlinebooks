@@ -1,6 +1,4 @@
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import auth
-
+from django.contrib.auth import authenticate, login as auth_login
 from django.shortcuts import render, redirect
 from .forms import RegisterUser, LoginUser
 from .models import *
@@ -46,17 +44,18 @@ def login(request):
         loginform = LoginUser(request, data = request.POST)
 
         if loginform.is_valid():
-            email = request.POST.get('email')
+            username = request.POST.get('username')
             password = request.POST.get('password')
+            print("Is Form Valid?", loginform.is_valid())
 
-            user = authenticate(request, email = email, password = password)
+            user = authenticate(request, username = username, password = password)
 
             if user is not None:
-                auth.login(request, user)
+                auth_login(request, user)
                 return redirect('dashboard')
-
-        
-
+            else:
+                 print(loginform.errors)
+            
 
     context = {
         'loginform': loginform

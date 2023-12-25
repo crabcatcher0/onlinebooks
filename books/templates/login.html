@@ -8,17 +8,32 @@
                 <div class="card-body">
                     <h3 class="card-title text-center mb-4">Login</h3>
                     <form method="POST">
+
                         {% csrf_token %}
 
                         <div class="form-group">
-                            {{ loginform.email.label_tag }}
-                            {{ loginform.email }}
+                            {{ loginform.username.label_tag }}
+                            {{ loginform.username }}
+                            {% if loginform.username.errors %}
+                                <small class="text-danger">{{ loginform.username.errors }}</small>
+                            {% endif %}
                         </div>
 
                         <div class="form-group">
                             {{ loginform.password.label_tag }}
                             {{ loginform.password }}
+                            {% if loginform.password.errors %}
+                                <small class="text-danger">{{ loginform.password.errors }}</small>
+                            {% endif %}
                         </div>
+
+                        {% if loginform.non_field_errors %}
+                            <div class="form-group">
+                                <small class="text-danger">{{ loginform.non_field_errors }}</small>
+                            </div>
+                        {% endif %}
+                        <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+
 
                         <button type="submit" class="btn btn-success btn-block">Login</button>
                     </form>

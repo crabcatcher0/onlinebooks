@@ -50,6 +50,8 @@
                   {{ form.password2 }}
                   <small class="text-danger">{{ form.password2.errors }}</small>
               </div>
+              
+              <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
 
               <button type="submit" class="btn btn-success">Register</button>
           </form>
